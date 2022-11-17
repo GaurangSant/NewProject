@@ -1,3 +1,4 @@
-To run this software successfully following requirements must be fulfilled
-        1 GB RAM
-        Internet Connection
+To run this website successfully following requirements must be fulfilled:
+        A computer system with 1 GB ram.
+        Internet Connection.
+        XAMPP.
