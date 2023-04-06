@@ -1,9 +1,9 @@
 <?php
 session_start();
-include("../php/Config.php");
+include("Config.php");
 if (isset($_SESSION['email'])) {
 } else {
-    header("Location: ../php/signin.php");
+    header("Location: signin.php");
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,19 +12,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $myitems = array_column($_SESSION['cart'], 'id');
             if (in_array($_POST['id'], $myitems)) {
                 echo "<script>alert('Item Alreadt Added');
-                window.location.href='../php/store.php';</script>";
+                window.location.href='store.php';</script>";
             } else {
                 $count = count($_SESSION['cart']);
                 $_SESSION['cart'][$count] = array('id' => $_POST['id'], 'bname' => $_POST['bname'], 'aname' => $_POST['aname'], 'price' => $_POST['price']);
                 print_r($_SESSION['cart']);
                 echo "<script>alert('Item Added');
-                window.location.href='../php/store.php';</script>";
+                window.location.href='store.php';</script>";
             }
         } else {
             $_SESSION['cart'][0] = array('id' => $_POST['id'], 'bname' => $_POST['bname'], 'aname' => $_POST['aname'], 'price' => $_POST['price']);
             print_r($_SESSION['cart']);
             echo "<script>alert('Item Added');
-                window.location.href='../php/store.php';</script>";
+                window.location.href='store.php';</script>";
         }
     }
     if(isset($_POST['delete'])){
@@ -32,12 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if($value['id'] == $_POST['id']){
                 unset($_SESSION['cart'][$key]);
                 echo "<script>alert('Item Removed');
-                window.location.href='../php/cart.php';</script>";
+                window.location.href='cart.php';</script>";
             }
         }
     } 
     if(isset($_POST['buy'])){
                     echo "<script>alert('Confirm Purchase?');
-                window.location.href='../php/invoice.php';</script>";
+                window.location.href='invoice.php';</script>";
     }
 }

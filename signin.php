@@ -1,12 +1,12 @@
 <?php
-include('../php/config.php');
+include('config.php');
 session_start();
 
 if(isset($_SESSION['email'])){
-  header("Location: ../php/welcome.php");
+  header("Location: welcome.php");
   exit;
 }
-require_once("../php/Config.php");
+require_once("Config.php");
 
 if (isset($_REQUEST['email'])) {
   $email = stripslashes($_REQUEST['email']);
@@ -30,9 +30,9 @@ if (isset($_REQUEST['email'])) {
           session_start();
           $_SESSION['fname'] = $result1['fname'];
           $_SESSION['email'] = $result1['email'];
-          header("Location: ../php/welcome.php");
+          header("Location: welcome.php");
         } else {
-          // header("Location: ../php/mistake.php");
+          // header("Location: mistake.php");
           echo '<script>alert("Incorrect credentials")</script>';
         }
       }
@@ -54,14 +54,14 @@ if (isset($_REQUEST['email'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/signin.css">
+  <link rel="stylesheet" href="signin.css">
   <title>Sign In</title>
-  <link rel="icon" type="image/x-icon" href="../images/image.png">
+  <link rel="icon" type="image/x-icon" href="image.png">
 </head>
 
 <body>
   <?php
-  include("../html/navbar.html");
+  include("navbar.html");
   ?>
   <div class="container">
     <div class="logo">
@@ -82,12 +82,12 @@ if (isset($_REQUEST['email'])) {
     </button>
     </form>
     <div class="link">
-      New user? <a href="../php/signup.php">Sign Up</a>
+      New user? <a href="signup.php">Sign Up</a>
     </div>
   </div>
   <footer>
     <?php
-    include("../html/footer.html");
+    include("footer.html");
     ?>
   </footer>
 </body>

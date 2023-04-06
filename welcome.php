@@ -1,9 +1,9 @@
 <?php
-include("../php/Config.php");
+include("Config.php");
 session_start();
 if (isset($_SESSION['email'])) {
 } else {
-  header("Location: ../php/signin.php");
+  header("Location: signin.php");
 }
 ?>
 
@@ -14,14 +14,14 @@ if (isset($_SESSION['email'])) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="../css/welcome.css">
+  <link rel="stylesheet" href="welcome.css">
 
   <title><?php echo "Welcome " . $_SESSION['fname'] ?></title>
-  <link rel="icon" type="image/x-icon" href="../images/image.png">
+  <link rel="icon" type="image/x-icon" href="image.png">
 </head>
 
 <body>
-  <?php include "../html/navbar.html"; ?>
+  <?php include "navbar.html"; ?>
   <?php
   $sql = "SELECT * FROM `user` WHERE email = '$_SESSION[email]'";
   $result = mysqli_query($con, $sql);
@@ -39,7 +39,7 @@ if (isset($_SESSION['email'])) {
     <strong>UID</strong>: <?php echo $data['uid'] ?><br><br>
   </div>
   <div class="container">
-    <strong>Upload Books</strong>: <a href="../php/upload.php"><button class="button" type="submit=">upload</button></a><br><br>
+    <strong>Upload Books</strong>: <a href="upload.php"><button class="button" type="submit=">upload</button></a><br><br>
   </div>
   <p>Previous Uploads</p>
   <div class="table">
@@ -51,7 +51,7 @@ if (isset($_SESSION['email'])) {
       if ($row > 0) {
         while ($data = mysqli_fetch_assoc($result)) {
       ?>
-          <form action="../php/add_to_cart.php" method="POST">
+          <form action="add_to_cart.php" method="POST">
             <div class="card">
               <input type="hidden" id="image" name="image" readonly /><img src="./<?php echo $data['image']; ?>"><br>
               <input type="hidden" id="bname" name="bname" readonly /><?php echo $data['bname']; ?><br>
@@ -66,12 +66,12 @@ if (isset($_SESSION['email'])) {
     </div>
   </div>
   <div class="container">
-    <a href="../php/logout.php"><button class="button" type="submit=">Logout</button></a><br><br>
+    <a href="logout.php"><button class="button" type="submit=">Logout</button></a><br><br>
   </div>
 
   <footer>
     <?php
-    include "../html/footer.html";
+    include "footer.html";
     ?>
   </footer>
 </body>

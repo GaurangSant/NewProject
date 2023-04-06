@@ -1,4 +1,4 @@
-<?php include("../php/Config.php"); ?>
+<?php include("Config.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,14 +7,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/store.css">
+  <link rel="stylesheet" href="store.css">
   <title>Store</title>
-  <link rel="icon" type="image/x-icon" href="../images/image.png">
+  <link rel="icon" type="image/x-icon" href="image.png">
 </head>
 
 <body>
-  <?php include("../html/navbar.html"); 
-  include("../html/searchbar.html"); ?>
+  <?php include("navbar.html"); 
+  include("searchbar.html"); ?>
 
 
   <div class="table">
@@ -26,7 +26,7 @@
       if ($row > 0) {
         while ($data = mysqli_fetch_assoc($result)) {
       ?>
-          <form action="../php/add_to_cart.php" method="POST">
+          <form action="add_to_cart.php" method="POST">
             <div class="card">
               <input type="hidden" id="image" name="image" readonly /><img src="./<?php echo $data['image']; ?>"><br>
               <input type="hidden" id="bname" name="bname" readonly /><?php echo $data['bname']; ?><br>
@@ -43,14 +43,14 @@
         }
       }
       else {
-        // include("../php/empty.php");
+        // include("empty.php");
       }
       ?>
     </div>
   </div>
 
   <footer>
-    <?php include("../html/footer.html"); ?>
+    <?php include("footer.html"); ?>
   </footer>
 
 </body>

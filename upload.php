@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/upload.css">
+    <link rel="stylesheet" href="upload.css">
     <title>Register item</title>
-    <link rel="icon" type="image/x-icon" href="../images/image.png">
+    <link rel="icon" type="image/x-icon" href="image.png">
 </head>
 
 <body>
     <?php
-    include('../html/navbar.html');
-    include('../php/config.php');
+    include('navbar.html');
+    include('config.php');
 
     session_start();
     if (isset($_POST['submit'])) {
@@ -71,7 +71,7 @@
             echo "<div class='form'>
               <h3>ERROR</h3><br/>
               </div>";
-            header("Location: ../php/index.php");
+            header("Location: index.php");
         }
     }
 
@@ -80,7 +80,7 @@
         <div class="div">
             Register your item!
         </div>
-        <form method="post" action="../php/upload.php" enctype="multipart/form-data" autocomplete="off">
+        <form method="post" action="upload.php" enctype="multipart/form-data" autocomplete="off">
             Book Name : <input type="text" name="bname" maxlength="25" required><br><br>
             Author Name : <input type="text" name="aname" maxlength="18" required><br><br>
             Price : <input type="text" name="price" maxlength="10" required><br><br>
@@ -92,7 +92,7 @@
         </form>
     </div>
     <?php
-    include('../html/footer.html');
+    include('footer.html');
     ?>
 </body>
 

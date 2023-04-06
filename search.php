@@ -1,4 +1,4 @@
-<?php include("../php/Config.php"); ?>
+<?php include("Config.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,13 +7,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="search.css">
     <title>Store</title>
-    <link rel="icon" type="image/x-icon" href="../images/image.png">
+    <link rel="icon" type="image/x-icon" href="image.png">
 </head>
 
 <body>
-    <?php include("../html/navbar.html");
+    <?php include("navbar.html");
     include("searchbar.html"); ?>
     <div class="table">
         <div class="grid">
@@ -26,7 +26,7 @@
                 if (mysqli_num_rows($result) > 0) {
                     while ($data = mysqli_fetch_assoc($result)) {
             ?>
-                        <form action="../php/add_to_cart.php" method="POST">
+                        <form action="add_to_cart.php" method="POST">
                             <div class="card">
                                 <input type="hidden" readonly /><img src="./<?php echo $data['image']; ?>"><br>
                                 <input type="hidden" readonly /><?php echo $data['bname']; ?><br>
@@ -46,7 +46,7 @@
         </div>
     </div>
     <footer>
-        <?php include("../html/footer.html"); ?>
+        <?php include("footer.html"); ?>
     </footer>
 
 </body>

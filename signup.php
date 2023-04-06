@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/signup.css">
+  <link rel="stylesheet" href="signup.css">
   <title>Sign Up</title>
-  <link rel="icon" type="image/x-icon" href="../images/image.png">
+  <link rel="icon" type="image/x-icon" href="image.png">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
 
   <?php
 
-  include('../php/config.php');
+  include('config.php');
 
   session_start();
   if (isset($_REQUEST['fname'])) {
@@ -51,18 +51,18 @@
         echo "<div class='form'>
               <h3>ERROR</h3><br/>
               </div>";
-        header("Location: ../php/index.php");
+        header("Location: index.php");
       }
     } else {
       echo "<script>alert('Passwords don't match');
-      window.location.href='../php/signup.php';</script>";
+      window.location.href='signup.php';</script>";
     }
   }
 
   ?>
 
   <?php
-  include("../html/navbar.html");
+  include("navbar.html");
   ?>
   <div class="container">
     <div class="logo">
@@ -93,12 +93,12 @@
       </button>
     </form>
     <div class="link">
-      Alredy a user? <a href="../php/signin.php">Sign In</a>
+      Alredy a user? <a href="signin.php">Sign In</a>
     </div>
   </div>
   <footer>
     <?php
-    include("../html/footer.html");
+    include("footer.html");
     ?>
   </footer>
 </body>
